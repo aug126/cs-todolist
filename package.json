@@ -10,10 +10,7 @@
     "browser-sync": "^2.24.6",
     "gulp": "^3.9.1",
     "gulp-refresh": "^1.1.0",
-<<<<<<< HEAD
     "gulp-rename": "^1.4.0",
-=======
->>>>>>> 76bda1308d6800bb0dd1d6835221cc034f3e1ef0
     "gulp-sass": "^4.0.1"
   },
   "scripts": {

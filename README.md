@@ -2,8 +2,6 @@
 
 ## La base
 
-- (Créer un input)
-- (Créer un button "add")
 - Au click du button "Ajouter" rajouter un li (en début de liste) avec le contenu de l'input et vider l'input
 - A chaque "li" il faut rajouter 3 buttons
   - button "valided"
