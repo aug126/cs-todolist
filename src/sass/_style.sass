@@ -1,2 +1,27 @@
 body 
-  background-color: rgb(236, 240, 245)
+  background-color: $bg-body
+.bg-body
+  background-color: $bg-body
+
+// Style d'une tâche
+.fa-check-circle
+  color: #3aa75b
+.fa-edit 
+  color: #f39c12
+.fa-trash-alt
+  color: #dd4b39
+
+ul 
+  padding: 0
+  >li    
+    list-style: none
+    padding: .5rem 0
+    >div
+      display: flex
+      >span 
+        flex: 1
+        display: flex
+        align-items: center
+        padding-left: 1rem
+      .btn
+        background-color: rgba(0, 0, 0, 0)

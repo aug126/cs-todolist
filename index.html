@@ -5,16 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="./node_modules/admin-lte/dist/css/AdminLTE.min.css">
-  <link rel="stylesheet" href="./public/css/style.css">
+  <link rel="stylesheet" href="./public/css/main.css">
   <title>ToDoList</title>
 </head>
 
 <body>
   <div class="container">
     <div id="title" class="my-4 callout callout-info">
-      <h1>ToDoList</h1>
+      <h1>TodoList</h1>
     </div>
     <div class="box box-info">
       <div class="box-header with-border">
@@ -37,20 +35,19 @@
     <div id="exo-1" class="box box-info">
       <div class="box-header with-border">
         <h3 class="box-title">
-          <form class="form-inline">
+          <div class="form-inline">
             <div class="form-group">
               <label for="task">Ajouter une tâche : </label>
-              <input type="text" class="form-control" id="task">
+              <input type="text" class="form-control m-1" id="task">
             </div>
             <button id="add-task" type="button" class="btn btn-primary">Ajouter</button>
-          </form>
+          </div>
         </h3>
       </div>
       <!-- /.box-header -->
 
       <div class="box-body">
         <ul id="list">
-          <li>Première tâche</li>
         </ul>
       </div>
       <!-- /.box-body -->
