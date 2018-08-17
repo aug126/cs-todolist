@@ -3669,8 +3669,22 @@ body {
 .bg-body {
   background-color: #ecf0f5; }
 
+h3 {
+  width: 100%; }
+
+@media(max-width: 576px) {
+  #add-task {
+    flex: 100%; }
+
+  .form-group {
+    width: 100%;
+    text-align: center; }
+    .form-group #input-task {
+      width: 100%;
+      margin: 0 !important; } }
 .fa-check-circle {
-  color: #3aa75b; }
+  color: #3aa75b;
+  transition: color 0.5s linear; }
 
 .fa-edit {
   color: #f39c12; }
@@ -3678,19 +3692,33 @@ body {
 .fa-trash-alt {
   color: #dd4b39; }
 
-ul {
+ul#list {
   padding: 0; }
-  ul > li {
+  ul#list > li {
     list-style: none;
-    padding: 0.5rem 0; }
-    ul > li > div {
-      display: flex; }
-      ul > li > div > span {
+    padding: 0.25rem 0;
+    transition: opacity 0.5s ease 0.2s, padding 0.5s, height 0.5s; }
+    ul#list > li > div {
+      display: flex;
+      background-color: #ecf0f5;
+      transition: background-color 0.3s ease; }
+      ul#list > li > div > span {
         flex: 1;
         display: flex;
         align-items: center;
         padding-left: 1rem; }
-      ul > li > div .btn {
+      ul#list > li > div .btn {
         background-color: rgba(0, 0, 0, 0); }
+    ul#list > li.valided-task > div {
+      background-color: #00a65a; }
+      ul#list > li.valided-task > div button:first-child > i {
+        color: #ecf0f5; }
+    ul#list > li.deleted-task {
+      opacity: 0;
+      padding: 0;
+      visibility: hidden;
+      transform: translateY(-15px) scale(0.85);
+      transition: all 1s ease;
+      transition: opacity 0.3s ease, padding 0.5s, height 0.5s, transform 0.3s ease, visibility 0.5s; }
 
 /*# sourceMappingURL=main.css.map */

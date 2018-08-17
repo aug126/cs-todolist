@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8">
@@ -14,34 +14,16 @@
     <div id="title" class="my-4 callout callout-info">
       <h1>TodoList</h1>
     </div>
-    <div class="box box-info">
-      <div class="box-header with-border">
-        <ul>
-          <li>
-            Commencez par faire un
-            <strong>npm i</strong> pour installer les dépendances.
-          </li>
-          <li>Votre projet est déjà initialisé. La structure est prête et vous avez même un
-            <strong>task runner</strong> pour lancer un serveur, générer le css depuis votre sass, actualiser la page dès la sauvegarde
-            de certains fichiers. Pour l'utiliser, lancez la commande.
-            <code>gulp</code> dans le terminal.</li>
-          <li>N'oubliez pas de faire des commit après les grosses étapes</li>
-          <li>
-            Vous pouvez enlever cette partie d'explications
-          </li>
-        </ul>
-      </div>
-    </div>
     <div id="exo-1" class="box box-info">
       <div class="box-header with-border">
         <h3 class="box-title">
-          <div class="form-inline">
+          <form class="form-inline" autocomplete="off">
             <div class="form-group">
-              <label for="task">Ajouter une tâche : </label>
-              <input type="text" class="form-control m-1" id="task">
+              <label for="input-task">Ajouter une tâche : </label>
+              <input type="text" class="form-control m-1" id="input-task">
             </div>
-            <button id="add-task" type="button" class="btn btn-primary">Ajouter</button>
-          </div>
+            <button id="add-task" type="submit" class="btn btn-primary">Ajouter</button>
+          </form>
         </h3>
       </div>
       <!-- /.box-header -->
