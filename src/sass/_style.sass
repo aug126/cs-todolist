@@ -1,0 +1,133 @@
+* 
+  box-sizing: border-box
+body 
+  background-color: $bg-body
+.bg-body
+  background-color: $bg-body
+h3 
+  width: 100%
+
+form 
+  span 
+    flex-basis: 100%
+    visibility: hidden
+    opacity: 0
+    color: #dd4b39
+  input, span
+    transition: all .7s ease
+  &.error 
+    input
+      border-color: #dd4b39
+    span 
+      color: #dd4b39
+      visibility: visible
+      opacity: 1
+
+// responsivité sur smartphone
+@media(max-width: 576px)
+  #add-task 
+    flex: 100% 
+  .form-group
+    width: 100%
+    text-align: center
+    #input-task
+      width: 100%
+      margin: 0 !important
+    
+// Style d'une tâche
+.fas
+  transition: color .5s linear
+.fa-check-circle
+  color: #3aa75b
+.fa-edit 
+  color: #f39c12
+.fa-trash-alt
+  color: #dd4b39
+.fa-save
+  color: black
+ul#list
+  padding: 0
+  .btn
+    opacity: 1
+    transition: all .3s ease
+  &.editing 
+    .btn 
+      visibility: hidden
+      opacity: 0
+    >li.editing-task 
+      .btn:nth-of-type(2)
+        visibility: visible
+        opacity: 1
+  >li    
+    list-style: none
+    >div
+      display: flex
+      background-color: $bg-body
+      transition: background-color .3s ease
+      >span 
+        align-items: center 
+        margin-left: 4px
+        flex: 1
+      >span:nth-of-type(1)
+        display: flex
+        align-items: center
+        padding-left: 1rem
+      >span:nth-of-type(2)
+        align-items: center
+        display: none
+      .btn
+        background-color: rgba(0, 0, 0, 0)
+    // // style de la tache (li) suivant son état :
+    &.valided-task
+      >div 
+        background-color: #00a65a
+        button:first-child>i
+          color: $bg-body
+    &.deleted-task
+      >div 
+        background-color: #dd4b39
+        button:last-child>i 
+          color: $bg-body
+
+    &.editing-task
+      >div>span:nth-of-type(1)
+        display: none
+      >div>span:nth-of-type(2)
+        display: flex
+      button:first-child 
+        visibility: hidden 
+      button:last-child 
+        visibility: hidden
+
+// FILTRE Todolist
+// #list>li 
+//   visibility: hidden
+// #list.todo>li.todo
+//   visibility: visible
+// #list.valided-task>li.valided-task
+//   visibility: visible
+// #list.deleted-task>li.deleted-task
+//   visibility: visible
+
+
+// class transition entrée
+#list>li 
+  overflow: hidden
+  margin-bottom: .5rem
+  transition: opacity .5s ease .2s, margin .5s ease, height .5s
+  transition: all 1s ease
+  &.valided-task.out, &.deleted-task.out
+    // display: none
+    margin-bottom: 0 !important
+    opacity: 0
+    visibility: hidden
+  &.valided-task.go-out, &.deleted-task.go-out
+    opacity: 0
+    margin-bottom: 0 !important
+    // height: 0 // la hauteur pour la transition delete est fixée dans le javascript (addTAsk et deleteTask) 
+    visibility: hidden
+    transform: translateY(-15px) scale(0.85)
+    transition: opacity .3s ease, margin .5s ease, height .5s, transform .3s ease, visibility .5s 
+  &.valided-task.go-in, &.deleted-task.go-in
+    transition: opacity .5s ease .2s, margin .5s ease, height .5s
+    margin-bottom: 0 !important
