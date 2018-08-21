@@ -1,11 +1,15 @@
+<<<<<<< HEAD
 * 
   box-sizing: border-box
+=======
+>>>>>>> 2dd4c4315da208b1754f7449d833a19e1826bfc9
 body 
   background-color: $bg-body
 .bg-body
   background-color: $bg-body
 h3 
   width: 100%
+<<<<<<< HEAD
 
 form 
   span 
@@ -24,6 +28,8 @@ form
       opacity: 1
 
 // responsivité sur smartphone
+=======
+>>>>>>> 2dd4c4315da208b1754f7449d833a19e1826bfc9
 @media(max-width: 576px)
   #add-task 
     flex: 100% 
@@ -35,14 +41,21 @@ form
       margin: 0 !important
     
 // Style d'une tâche
+<<<<<<< HEAD
 .fas
   transition: color .5s linear
 .fa-check-circle
   color: #3aa75b
+=======
+.fa-check-circle
+  color: #3aa75b
+  transition: color .5s linear
+>>>>>>> 2dd4c4315da208b1754f7449d833a19e1826bfc9
 .fa-edit 
   color: #f39c12
 .fa-trash-alt
   color: #dd4b39
+<<<<<<< HEAD
 .fa-save
   color: black
 ul#list
@@ -60,11 +73,20 @@ ul#list
         opacity: 1
   >li    
     list-style: none
+=======
+ul#list
+  padding: 0
+  >li    
+    list-style: none
+    padding: .25rem 0
+    transition: opacity .5s ease .2s, padding .5s, height .5s
+>>>>>>> 2dd4c4315da208b1754f7449d833a19e1826bfc9
     >div
       display: flex
       background-color: $bg-body
       transition: background-color .3s ease
       >span 
+<<<<<<< HEAD
         align-items: center 
         margin-left: 4px
         flex: 1
@@ -78,12 +100,22 @@ ul#list
       .btn
         background-color: rgba(0, 0, 0, 0)
     // // style de la tache (li) suivant son état :
+=======
+        flex: 1
+        display: flex
+        align-items: center
+        padding-left: 1rem
+      .btn
+        background-color: rgba(0, 0, 0, 0)
+    // style de la tache (li) suivant son état :
+>>>>>>> 2dd4c4315da208b1754f7449d833a19e1826bfc9
     &.valided-task
       >div 
         background-color: #00a65a
         button:first-child>i
           color: $bg-body
     &.deleted-task
+<<<<<<< HEAD
       >div 
         background-color: #dd4b39
         button:last-child>i 
@@ -131,3 +163,13 @@ ul#list
   &.valided-task.go-in, &.deleted-task.go-in
     transition: opacity .5s ease .2s, margin .5s ease, height .5s
     margin-bottom: 0 !important
+=======
+      opacity: 0
+      padding: 0
+      // height: 0 // la hauteur pour la transition delete est fixée dans le javascript (addTAsk et deleteTask) 
+      visibility: hidden
+      transform: translateY(-15px) scale(0.85)
+      transition: all 1s ease
+      transition: opacity .3s ease, padding .5s, height .5s, transform .3s ease, visibility .5s 
+    &.editing-task
+>>>>>>> 2dd4c4315da208b1754f7449d833a19e1826bfc9
