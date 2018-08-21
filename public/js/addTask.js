@@ -1,29 +1,30 @@
-import {inputError, takeOffError, goOut} from './fonctions.js'
+import {
+  inputError,
+  takeOffError,
+  goOut
+} from './fonctions.js'
 
 var submitForm = document.querySelector("form.form-inline");
 var inputTask = document.getElementById("input-task");
 var todoList = document.getElementById("list");
 
 var addTask = () => {
-  if (inputError(inputTask))
-  {
+  if (inputError(inputTask)) {
     inputTask.closest("form").classList.add("error");
     return;
   }
   takeOffError(inputTask);
+  newLi(inputTask.value, "todo");
+  inputTask.value = ""
+};
+
+export var newLi = (text, state) => {
   let newTask = document.createElement('li');
-  newTask.className = "todo";
-  // __initiation des prop cc pour la transition
-  // let taskHeight;
-  // newTask.style.position = "absolute";
-  // newTask.style.visibility = "hidden";
-  // newTask.style.opacity = "0";
-  // newTask.style.padding = "0";
-  // __fin transition
+  newTask.className = state;
   newTask.innerHTML =
     `<div class="">
-  <span> ` + inputTask.value + ` </span>
-  <span> <input class="form-control" value="` + inputTask.value +`"> </span>
+  <span> ` + text + ` </span>
+  <span> <input class="form-control" value="` + text + `"> </span>
   <div>
   <button class="btn m-1"><i class="fas fa-check-circle"></i></button>
   <button class="btn m-1"><i class="fas fa-edit"></i></button>
@@ -34,19 +35,8 @@ var addTask = () => {
   // __Init prop css pour transition
   newTask.dataset.height = parseInt(window.getComputedStyle(newTask).height);
   newTask.style.height = newTask.dataset.height + "px";
-  // taskHeight = parseInt(window.getComputedStyle(newTask).height) + 10 + "px" // permet la transition à l'entrée et au delete;
-  // newTask.style.height = "0";
-  // newTask.style.position = "static";
-  // newTask.style.visibility = "visible";
-  // setTimeout(() => {
-  //   newTask.style.opacity = "1";
-  //   newTask.style.height = taskHeight;
-  //   newTask.style.padding = "0.25rem 0";
-  // }, 10);
-  // __fin transition
-  inputTask.value = ""
   listenBtn(newTask);
-};
+}
 
 var listenBtn = (newTask) => {
   var buttons = newTask.getElementsByTagName('button');
@@ -61,8 +51,7 @@ var listenBtn = (newTask) => {
 var validTask = (task) => {
   if (task.classList.contains("valided-task"))
     task.classList.replace("valided-task", "todo")
-  else 
-  {
+  else {
     task.classList.add("valided-task");
     task.classList.remove("todo");
     task.classList.remove("deleted-task");
@@ -76,8 +65,7 @@ var editTask = (task) => {
   icon.classList.toggle("fa-save");
   icon.classList.toggle("fa-edit");
   list.classList.toggle("editing");
-  if (task.classList.contains("editing-task"))
-  {
+  if (task.classList.contains("editing-task")) {
     input.focus();
     input.selectionEnd = 1000;
   } else {
@@ -87,7 +75,7 @@ var editTask = (task) => {
 }
 
 var deleteTask = (task) => {
-  if (task.classList.contains("deleted-task")) 
+  if (task.classList.contains("deleted-task"))
     task.classList.replace("deleted-task", "todo");
   else {
     task.classList.add("deleted-task");

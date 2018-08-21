@@ -1,22 +1,22 @@
-import { goOut } from "./fonctions.js";
+import {
+  goOut,
+} from "./fonctions.js";
 
 var filtreBtns = document.querySelectorAll('#filtre>button');
 var list = document.getElementById("list");
 
-var changeFiltre = async (event) => {
-  var btn = event.target;
-  var filtreClass = btn.dataset.filtre;
-  btn.classList.toggle('btn-primary');
-  if (list.classList.contains(filtreClass))
-  {
-    list.classList.remove(filtreClass);
-    var leaveList = Array.from(list.querySelectorAll('.' + filtreClass))
+export var changeFiltre = async (filtre) => {
+  document.querySelector('button[data-filtre="' + filtre + '"]').classList.toggle('btn-primary');
+  if (list.classList.contains(filtre)) {
+    list.classList.remove(filtre);
+    var leaveList = Array.from(list.querySelectorAll('.' + filtre))
+    console.log(leaveList);
     leaveList.forEach((li) => {
       goOut(li, list);
     })
   } else {
-    list.classList.add(filtreClass);
-    var outLi = Array.from(list.querySelectorAll("." + filtreClass + ".out"))
+    list.classList.add(filtre);
+    var outLi = Array.from(list.querySelectorAll("." + filtre + ".out"))
     outLi.forEach((li) => {
       li.classList.add("go-in");
       li.classList.remove("out");
@@ -28,6 +28,9 @@ var changeFiltre = async (event) => {
   }
 }
 
-Array.from(filtreBtns).forEach( (btn) => {
-  btn.addEventListener("click", () => changeFiltre(event))
+Array.from(filtreBtns).forEach((btn) => {
+  btn.addEventListener("click", (event) => {
+    var filtre = event.target.dataset.filtre;
+    changeFiltre(filtre);
+  });
 })

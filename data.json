@@ -1,0 +1,23 @@
+{
+  "tasks": [{
+      "text": "faire la vaisselle",
+      "state": "valided-task"
+    },
+    {
+      "text": "faire les courses",
+      "state": "todo"
+    },
+    {
+      "text": "test json in todo",
+      "state": "deleted-task"
+    },
+    {
+      "text": "travailler pour la coding school",
+      "state": "todo"
+    },
+    {
+      "text": "finir la todolist",
+      "state": "todo"
+    }
+  ]
+}

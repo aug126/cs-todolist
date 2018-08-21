@@ -28,21 +28,22 @@
           </form>
           <div id="filtre" class="pt-1">
             <button class="btn btn-primary" data-filtre="todo">ToDo</button>
-            <button class="btn" data-filtre="valided-task">Done</button>
-            <button class="btn" data-filtre="deleted-task">Deleted</button>
+            <button class="btn btn-primary" data-filtre="valided-task">Done</button>
+            <button class="btn btn-primary" data-filtre="deleted-task">Deleted</button>
           </div>
         </h3>
       </div>
       <!-- /.box-header -->
 
       <div class="box-body">
-        <ul id="list" class="todo">
+        <ul id="list" class="todo deleted-task valided-task">
         </ul>
       </div>
       <!-- /.box-body -->
     </div>
 
   </div>
+  <script src="./node_modules/axios/dist/axios.min.js"></script>
   <script src="./public/js/main.js" type="module"></script>
 </body>
 
