@@ -10,13 +10,17 @@ var takeOffError = () => {
 
 var goOut = (task, list) => {
   if (list.classList.contains(task.className))
-    return ;
+    return;
   task.classList.add("go-out");
   task.style.height = 0;
   setTimeout(() => {
     task.classList.remove("go-out");
     task.classList.add("out");
-  },700);
+  }, 700);
 }
 
-export {inputError, takeOffError, goOut}
+export {
+  inputError,
+  takeOffError,
+  goOut
+}
